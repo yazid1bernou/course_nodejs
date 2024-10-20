@@ -5,8 +5,8 @@ const port = 3000;
 
 // http request methods :  get , post , put , patch , delete 
 
-app.get('/home', (req, res, next) => {
-    res.send("<h1> Welcome in Home page  </h1>")
+app.get('/', (req, res, next) => {
+    res.redirect('/contact');
 })
 
 app.get('/about', (req, res, next) => {
@@ -16,6 +16,10 @@ app.get('/contact', (req, res, next) => {
     res.send("<h1>  Welcome  in Contact page </h1>")
 })
 
+
+app.get('/user/:id', (req, res) => {
+    res.send('use id is : ' + req.params.id);
+})
 
 
 
