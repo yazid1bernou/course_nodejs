@@ -1,14 +1,26 @@
 const express = require('express');
-
 const app = express();
 
 const port = 3000;
 
-app.get('/', (req, res) => {
-    res.send('Hello my friend ')
+// http request methods :  get , post , put , patch , delete 
+
+app.get('/home', (req, res, next) => {
+    res.send("<h1> Welcome in Home page  </h1>")
 })
+
+app.get('/about', (req, res, next) => {
+    res.send("<h1> Welcome in About page  </h1>")
+})
+app.get('/contact', (req, res, next) => {
+    res.send("<h1>  Welcome  in Contact page </h1>")
+})
+
+
 
 
 app.listen(port, () => {
-    console.log(`App listening on port : ${port}`)
+    console.log(`App is runing with port : ${port}`)
 })
+
+
